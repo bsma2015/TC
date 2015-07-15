@@ -28,7 +28,7 @@ window.onload = function () {
                 data: "data",
                 total: "total"
             },
-            pageSize: 2,
+            pageSize: 3,
             serverPaging: true
         },
         template: kendo.template($("#headerListTemplate").html())
@@ -38,5 +38,18 @@ window.onload = function () {
         change: function (e) {
         }
     }).data("kendoPager");
+    $("#header-save-button").click(function () {
+        var header = new Header();
+        header.save({
+            title: $("#header-title").val(),
+            smallDescription: $("#header-description").val()
+        }, {
+            success: function () {
+                $("#header-title").val("");
+                $("#header-description").val("");
+                headerList.dataSource.read();
+            }
+        });
+    });
 };
 //# sourceMappingURL=app.js.map
