@@ -39,3 +39,4 @@ window.onload = function () {
         }
     }).data("kendoPager");
 };
+//# sourceMappingURL=app.js.map
