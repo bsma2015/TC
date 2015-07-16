@@ -9,5 +9,8 @@ var PagesInit;
         loginInit();
     }
     PagesInit.login = login;
+    function courses() {
+        coursesListInit();
+    }
+    PagesInit.courses = courses;
 })(PagesInit || (PagesInit = {}));
-//# sourceMappingURL=PagesInit.js.map

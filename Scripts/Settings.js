@@ -16,4 +16,3 @@ var Settings;
     Settings.dateTimeToddMMyyyy = dateTimeToddMMyyyy;
     Settings.router;
 })(Settings || (Settings = {}));
-//# sourceMappingURL=Settings.js.map

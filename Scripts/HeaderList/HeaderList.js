@@ -3,30 +3,7 @@ function HeaderListInit() {
     var header = new Header();
     var query = new Parse.Query(Header);
     var headerList = $("#headerList").kendoListView({
-        dataSource: {
-            transport: {
-                read: function (options) {
-                    console.log(options);
-                    var d1 = $.Deferred();
-                    var d2 = $.Deferred();
-                    query.count().then(function (data) {
-                        d1.resolve(data);
-                    });
-                    query.limit(options.data.take).skip(options.data.skip).descending("updatedAt").find().then(function (data) {
-                        d2.resolve(data);
-                    });
-                    $.when(d1, d2).then(function (v1, v2) {
-                        options.success({ total: v1, data: v2 });
-                    });
-                }
-            },
-            schema: {
-                data: "data",
-                total: "total"
-            },
-            pageSize: 3,
-            serverPaging: true
-        },
+        dataSource: KendoUnits.setDatasourseDefaults({ class: Header, pageSize: 3 }),
         template: kendo.template($("#headerListTemplate").html())
     }).data("kendoListView");
     $("#headerListPager").kendoPager({
@@ -48,4 +25,3 @@ function HeaderListInit() {
         });
     });
 }
-//# sourceMappingURL=HeaderList.js.map

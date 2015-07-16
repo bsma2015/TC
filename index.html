@@ -44,7 +44,7 @@
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#courses">Courses</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -146,8 +146,43 @@
         </div>
     </script>
 
+    <script id="coursesPageTemplate" type="text/x-kendo-template">
+        <div id="courses"></div>
+    </script>
+    <script id="coursesListTemplate" type="text/x-kendo-template">
+        <div class="col-md-6">
+            <h2>#:attributes.name#</h2>
+            <div class="col-md-3">
+                # if(attributes.is_verified) {#
+                დამოწმებულია
+                #}else{#
+                დასამოწმებელია
+                #}#
+            </div>
+            <div align="right" class="col-md-3 edit-buttons">
+                <a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
+                <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
+            </div>
+        </div>
+    </script>
+
+    <script id="coursesListEditTemplate" type="text/x-kendo-template">
+        <div class="col-md-6 k-widget">
+            <h2><input class="k-textbox" data-bind="value:name" /></h2>
+            <div class="col-md-3">
+                <input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:is_verified">
+                <label class="k-checkbox-label" for="eq1">დამოწმებულია</label>
+            </div>
+            <div align="right" class="col-md-3 edit-buttons">
+                <a class="k-button k-update-button" href="\\#"><span class="k-icon k-update"></span></a>
+                <a class="k-button k-cancel-button" href="\\#"><span class="k-icon k-cancel"></span></a>
+            </div>
+        </div>
+    </script>
+
     <script id="loginPageTemplate" type="text/x-kendo-template">
-        <div id="loginDiv" class="container vcenter" <!--style="margin-top: 150px;"-->>
+        <div id="loginDiv" class="container vcenter">
+            <!--style="margin-top: 150px;"-->
             <div class=" row">
                 <div class="col-lg-4  col-md-offset-4">
                     <div class=" panel panel-primary" style="border-color:#153693;">
@@ -196,8 +231,10 @@
     <script src="Scripts/Settings.js"></script>
     <script src="app.js"></script>
     <script src="Scripts/PagesInit.js"></script>
+    <script src="Scripts/KendoUnits.js"></script>
     <script src="Scripts/Users/Login.js"></script>
     <script src="Scripts/Users/Users.js"></script>
+    <script src="Scripts/Courses/Courses.js"></script>
     <script src="Scripts/HeaderList/HeaderList.js"></script>
 
 </body>
