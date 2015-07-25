@@ -97,4 +97,3 @@ var resources;
         { department: "catering", name: "Steward/stewardess", value: "steward/stewardess" },
     ];
 })(resources || (resources = {}));
-//# sourceMappingURL=Install.js.map

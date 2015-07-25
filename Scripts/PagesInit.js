@@ -18,4 +18,3 @@ var PagesInit;
     }
     PagesInit.headers = headers;
 })(PagesInit || (PagesInit = {}));
-//# sourceMappingURL=PagesInit.js.map
