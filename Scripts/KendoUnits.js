@@ -16,27 +16,52 @@ var KendoUnits;
                         d2.resolve(data);
                     });
                     $.when(d1, d2).then(function (v1, v2) {
-                        options.success({ total: v1, data: v2 });
+                        console.log(v1, JSON.parse(JSON.stringify(v2)));
+                        options.success({ total: v1, data: JSON.parse(JSON.stringify(v2)) });
                     });
                 },
                 update: function (options) {
-                    alert(234);
-                    console.log(options);
+                    console.log("update", options);
+                    var obj = new cla();
+                    obj.save(options.data, {
+                        success: function (data) {
+                            console.log(data.toJSON());
+                            options.success(data.toJSON());
+                        },
+                        error: function (data) {
+                            options.error(data);
+                        }
+                    });
                 },
                 create: function (options) {
-                    console.log(options);
+                    console.log("create", options);
+                    var obj = new cla();
+                    var acl = new Parse.ACL(Parse.User.current());
+                    acl.setRoleWriteAccess("Super Admin", true);
+                    obj.setACL();
+                    obj.save(options.data, {
+                        success: function (data) {
+                            console.log(data.toJSON());
+                            options.success(data.toJSON());
+                        },
+                        error: function (data) {
+                            options.error(data);
+                        }
+                    });
                 },
                 destroy: function (options) {
-                    console.log(options);
-                },
+                    console.log("destroy");
+                }
             },
             schema: {
                 data: "data",
-                total: "total"
+                total: "total",
+                model: {
+                    id: "objectId",
+                    fields: {}
+                }
             },
             pageSize: 6,
-            serverPaging: true,
-            serverFiltering: true,
         };
         var result = $.extend(true, ds, i);
         return result;

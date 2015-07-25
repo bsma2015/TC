@@ -2,7 +2,7 @@ var PagesInit;
 (function (PagesInit) {
     "use strict";
     function main() {
-        HeaderListInit();
+        mainInit();
     }
     PagesInit.main = main;
     function login() {
@@ -13,4 +13,8 @@ var PagesInit;
         coursesListInit();
     }
     PagesInit.courses = courses;
+    function headers() {
+        HeaderListInit();
+    }
+    PagesInit.headers = headers;
 })(PagesInit || (PagesInit = {}));

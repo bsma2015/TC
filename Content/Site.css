@@ -29,9 +29,41 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    margin-top:2px;
+    margin-bottom:2px;
 }
+
+/*.row{
+    margin-top:5px;
+    margin-bottom:5px;
+}*/
 .form-control.k-widget
 {
     padding: 0;
     width: 100%;
+}
+
+#mainTabtStrip div[role=tabpanel]{
+    overflow:hidden;
+}
+
+#mainTabtStrip ul li i.k-icon{
+    margin-top:1px;
+}
+.navbar-fixed-top .nav {
+    padding: 0!important;
+}
+/*.navbar-collapse.collapse{
+    height:60px!important;
+}*/
+.navbar-brand{
+    height:50px;
+}
+.navbar-toggle {
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.navbar-fixed-top .navbar-brand{
+    padding:5px !important;
 }

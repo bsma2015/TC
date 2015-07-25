@@ -11,11 +11,15 @@ $(document).ready(function () {
     var container;
     container = $("#content");
     currentUser = Parse.User.current();
+    if (currentUser) {
+        $("#log-out").text("Log out");
+    }
     Settings.router.route("afterLogin", function () {
     });
     Settings.router.route(":Act", function (act, params) {
         console.log("page", act);
-        if (act != "login" && !currentUser) {
+        console.log(currentUser);
+        if (act !== "login" && act !== "main" && !currentUser) {
             Settings.router.navigate("#login");
         }
         else {
@@ -36,6 +40,11 @@ $(document).ready(function () {
     Settings.router.start();
 });
 window.onload = function () {
-    $["material"].init();
     usersInit();
+    $("#log-out").click(function () {
+        Parse.User.logOut();
+        currentUser = undefined;
+        $("#log-out").text("Log in");
+        Settings.router.navigate("login");
+    });
 };

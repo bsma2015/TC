@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
     <!--<link href="Content/Kendo/2015.2.264/kendo.common-bootstrap.core.min.css" rel="stylesheet" />-->
-    <!--<link href="Content/Kendo/2015.2.264/kendo.common-bootstrap.min.css" rel="stylesheet" />
-    <link href="Content/Kendo/2015.2.264/kendo.bootstrap.min.css" rel="stylesheet" />-->
-    <link href="Content/Kendo/2015.2.264/kendo.common-material.min.css" rel="stylesheet" />
-    <link href="Content/Kendo/2015.2.264/kendo.material.min.css" rel="stylesheet" />
-    <link href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet" />
-
+    <link href="https://bootswatch.com/paper/bootstrap.min.css" rel="stylesheet">
+    <link href="Content/Kendo/2015.2.264/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Kendo/2015.2.264/kendo.bootstrap.custom.css" rel="stylesheet" />
+    <!--<link href="Content/Kendo/2015.2.264/kendo.bootstrap.min.css" rel="stylesheet" />-->
+    <!--<link href="Content/Kendo/2015.2.264/kendo.common-material.min.css" rel="stylesheet" />
+    <link href="Content/Kendo/2015.2.264/kendo.material.min.css" rel="stylesheet" />-->
+    <link href="Content/Site.css" rel="stylesheet" />
+    <!--<link href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet" />-->
     <!--<link href="http://fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet" />
     <link href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet" />-->
-    <link href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet" />
-    <link href="http://demos.telerik.com/kendo-ui/content/integration/bootstrap/styles.css" rel="stylesheet" />
+    <!--<link href="http://fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet" />
+    <link href="http://demos.telerik.com/kendo-ui/content/integration/bootstrap/styles.css" rel="stylesheet" />-->
     <link href="Content/small-business.css" rel="stylesheet" />
-    <link href="Content/Site.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Navigation -->
@@ -41,15 +42,17 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#main">Main</a>
                     </li>
                     <li>
                         <a href="#courses">Courses</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#aboutUs">About us</a>
                     </li>
+
                 </ul>
+                <button id="log-out" class="btn btn-default" style="margin:12px; float:right;">Log in</button>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -64,7 +67,7 @@
             </div>
             <!-- /.col-md-8 -->
             <div class="col-md-4">
-                <h1>Business Name or Tagline</h1>
+                <h1>BSMA 2015</h1>
                 <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
                 <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
             </div>
@@ -88,34 +91,205 @@
         </footer>
     </div>
     <script id="mainPageTemplate" type="text/x-kendo-template">
+        <div id="mainTabtStrip">
+            <ul>
+                <li><i class="k-icon k-i-arrowhead-e"></i> Department</li>
+                <li><i class="k-icon k-i-arrowhead-e"></i> Profession</li>
+                <li><i class="k-icon k-i-arrowhead-e"></i> Courses</li>
+                <li><i class="k-icon k-i-tick"></i> Registration Finish</li>
+            </ul>
+            <div>
+                <!-- tab1 -->
+                <div class="row">
+                    <div id="departments" style="border:0;"></div>
+                    <!--<div class="col-md-4" align="center">
+                        <label for="navigation-department-button" class="hover"
+                               style="display: block; cursor:pointer; z-index: 100; width: 325px; height: 250px; background-image: url('http://college.novikontas.lv/static/img/menu/courses-navigation.png'); background-repeat: no-repeat; background-position: center -250px;">
+                        </label>
+                        <button value="navigation" id="navigation-department-button" class="btn btn-default">Navigation Department</button>
+                    </div>
+                    <div class="col-md-4" align="center">
+                        <label for="engineering-department-button" class="hover"
+                               style="display: block; cursor:pointer; z-index: 100; width: 325px; height: 250px; background-image: url('http://college.novikontas.lv/static/img/menu/courses-engineering.png'); background-repeat: no-repeat; background-position: center -250px;">
+                        </label>
+                        <button value="engineering" id="engineering-department-button" class="btn btn-default">Engineering Department</button>
+                    </div>
+                    <div class="col-md-4" align="center">
+                        <label for="catering-department-button" class="hover"
+                               style="display: block; cursor:pointer; z-index: 100; width: 325px; height: 250px; background-image: url('http://college.novikontas.lv/static/img/menu/courses-catering.png'); background-repeat: no-repeat; background-position: center -250px;">
+                        </label>
+                        <button value="catering" id="catering-department-button" class="btn btn-default">Catering Department</button>
+                    </div>-->
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="well k-info-colored text-center">
+                            აირჩიეთ დეპარტამენტი
+                        </div>
+                    </div>
+                </div>
+            </div><!-- tab1 -->
+            <div>
+                <!-- tab2 -->
+
+
+            </div><!-- tab2 -->
+            <div>
+                <!-- tab3 -->
+
+            </div><!-- tab3 -->
+            <div>
+                <!-- tab4 -->
+
+            </div><!-- tab4 -->
+        </div>
+    </script>
+
+
+    <script id="departmentsListTemplate" type="text/x-kendo-template">
+        <div class="col-md-4" align="center">
+            <label for="#:value#-department-button" class="hover"
+                   style="display: block; cursor:pointer; z-index: 100; width: 325px; height: 250px; background-image: url('#:img#'); background-repeat: no-repeat; background-position: center -250px;">
+            </label>
+            <button value="#:value#" id="#:value#-department-button" class="btn btn-default">#:name#</button>
+        </div>
+    </script>
+
+    <script id="professionsTabTemplate" type="text/x-kendo-template">
+        <div class="row">
+            <div id="professions" style="border:0;"></div>
+            <!--<div class="col-md-4" align="center">
+                <button value="captain" class="btn btn-default">Captain</button>
+            </div>
+            <div class="col-md-4" align="center">
+                <button value="chief officer" class="btn btn-default">Chief officer</button>
+            </div>
+            <div class="col-md-4" align="center">
+                <button value="2nd, 3rd officer" class="btn btn-default">2nd, 3rd officer</button>
+            </div>
+            <div class="col-md-4" align="center">
+                <button value="bosun" class="btn btn-default">Bosun</button>
+            </div>
+            <div class="col-md-4" align="center">
+                <button value="ab-able seaman" class="btn btn-default">Ab-able seaman</button>
+            </div>
+            <div class="col-md-4" align="center">
+                <button value="os-ordinary seaman" class="btn btn-default">Os-ordinary seaman</button>
+            </div>-->
+        </div>
         <div class="row">
             <div class="col-lg-12">
-                <div class="well text-center">
-                    This is a well that is a great spot for a business tagline or phone number for easy access!
+                <div class="well k-info-colored text-center">
+                    აირჩიეთ პროფესია
                 </div>
             </div>
-            <!-- /.col-lg-12 -->
         </div>
-        <!-- /.row -->
+    </script>
+    <script id="professionsListTemplate" type="text/x-kendo-template">
+        <div class="col-md-4" align="center">
+            <button value="#:value#" class="btn btn-default">#:name#</button>
+        </div>
+    </script>
 
+    <script id="coursesTabTemplate" type="text/x-kendo-template">
         <div class="row">
-            <div class="col-md-4">
-                <h2>Heading 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-                <a class="btn btn-default" href="#">More Info</a>
-            </div>
-            <div class="col-md-4">
-                <h2>Heading 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-                <a class="btn btn-default" href="#">More Info</a>
-            </div>
-            <div class="col-md-4">
-                <h2>Heading 3</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-                <a class="btn btn-default" href="#">More Info</a>
+            <div id="courses" style="border:0;"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <button id="courses-are-selected-button" class="btn btn-default ">
+                    კურსების არჩევა
+                </button>
             </div>
         </div>
-        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well k-info-colored text-center">
+                    აირჩიეთ კურსები
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="registrationFinishTabTemplate" type="text/x-kendo-template">
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="courses"></div>
+            </div>
+            <div class="col-lg-6">
+                <h3>Contacts</h3>
+                <p>Phone: +995 597 500532</p>
+                <p>E-mail: giorgi.gorgodze@gmail.com</p>
+                <h3>Registration</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Name</h5>
+                        <input type="text" id="registration-finish-name" class="k-textbox" style="width:100%" />
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Surname</h5>
+                        <input type="text" id="registration-finish-lastname" class="k-textbox" style="width:100%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>E-mail (Login)</h5>
+                        <input type="email" id="registration-finish-email" class="k-textbox" style="width:100%" />
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Phone</h5>
+                        <input type="text" id="registration-finish-phone" class="k-textbox" style="width:100%" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Password</h5>
+                        <input id="registration-finish-password" type="password" class="k-textbox" style="width:100%" />
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Repeat Password</h5>
+                        <input id="registration-finish-repassword" type="password" class="k-textbox" style="width:100%" />
+                    </div>
+                </div>
+                <p align="right">
+                    <button id="registration-finish-button" class="k-button">Finish</button>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well k-info-colored text-center">
+                    შეავსეთ რიგისტრაციის ფორმა
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="coursesListViewSelectedForRegustrationTemplate" type="text/x-kendo-template">
+        <div style="margin:5px;">
+            <i class="k-icon k-i-tick"></i>
+            #:name#
+        </div>
+    </script>
+
+    <script id="coursesListForRegustrationTemplate" type="text/x-kendo-template">
+        <div class="col-md-4" style="margin:5px;">
+            <input id="#:objectId#" type="checkbox" class="k-checkbox" value="objectId" />
+            <label for="#:objectId#" class="k-checkbox-label">
+                #:name#
+            </label>
+        </div>
+    </script>
+
+    <script id="headerListTemplate" type="text/x-kendo-template">
+        <div class="col-md-4">
+            <h2>#:attributes.title#</h2>
+            <p style="height:50px; overflow-y:hidden;">#:attributes.smallDescription#</p>
+            <a class="btn btn-default" href="\\#content/#:id#">More Info</a>
+        </div>
+    </script>
+
+    <script id="headersPageTemplate" type="text/x-kendo-template">
         <div class="row">
             <div id="headerList">
 
@@ -138,44 +312,72 @@
             </div>
         </div>
     </script>
-    <script id="headerListTemplate" type="text/x-kendo-template">
-        <div class="col-md-4">
-            <h2>#:attributes.title#</h2>
-            <p style="height:50px; overflow-y:hidden;">#:attributes.smallDescription#</p>
-            <a class="btn btn-default" href="\\#content/#:id#">More Info</a>
+
+    <script id="aboutUsPageTemplate" type="text/x-kendo-template">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 align="center">ABOUT US</h2>
+
+                Seafarers Training Centre of Batumi State Maritime Academy was established in July 2012 as a biggest Maritime Training Service Centre provider in Georgia. STCC is a functional unit manned with highly qualified staff.
+                <br /><br />
+                Training Standards and Programmes at STCC are established in accordance with the provisions of STCW 2010, as amended and comply with the requirements of ISO 9001:2008 certified by the Certification Body “Russian Register” (IQNet), which is implemented and functioning at BSMA since 2010.
+                <br/><br />
+                STCC is recognized and monitored by the Maritime Transport Agency of Georgia. All conventional Training Courses are approved by the Maritime Transport Agency of Georgia. Batumi State Maritime Academy as the higher educational institution and STCC as the BSMA essential part, successfully passed EMSA audit held in October 2012.
+                In 2014 Batumi State Maritime Academy opened renovated simulation Centre.  We extended our existing simulators complex by installation of the Transas Full Mission offshore simulator with 270 degrees visualization, which is based on the Transas NTPRO 5000 Software.
+            </div>
         </div>
+
     </script>
 
     <script id="coursesPageTemplate" type="text/x-kendo-template">
+        <div>
+            <button id="course-add-button" class="k-button k-add-button"><i class="k-icon k-add"></i></button>
+        </div>
         <div id="courses"></div>
     </script>
     <script id="coursesListTemplate" type="text/x-kendo-template">
         <div class="col-md-6">
-            <h2>#:attributes.name#</h2>
+            <h2>#:name#</h2>
             <div class="col-md-3">
-                # if(attributes.is_verified) {#
+                # if(is_verified) {#
                 დამოწმებულია
                 #}else{#
                 დასამოწმებელია
                 #}#
             </div>
             <div align="right" class="col-md-3 edit-buttons">
-                <a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
-                <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
+                <a class="k-button k-edit-button"><span class="k-icon k-edit"></span></a>
+                <a class="k-button k-delete-button"><span class="k-icon k-delete"></span></a>
             </div>
         </div>
     </script>
 
     <script id="coursesListEditTemplate" type="text/x-kendo-template">
         <div class="col-md-6 k-widget">
-            <h2><input class="k-textbox" data-bind="value:name" /></h2>
-            <div class="col-md-3">
-                <input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:is_verified">
-                <label class="k-checkbox-label" for="eq1">დამოწმებულია</label>
+            <div class="row" style="margin:5px;">
+                <div class="col-md-12">
+                    <input class="k-textbox" data-bind="value:name" style="width:100%;" />
+                </div>
             </div>
-            <div align="right" class="col-md-3 edit-buttons">
-                <a class="k-button k-update-button" href="\\#"><span class="k-icon k-update"></span></a>
-                <a class="k-button k-cancel-button" href="\\#"><span class="k-icon k-cancel"></span></a>
+            <div class="row" style="margin:5px;">
+                <div class="col-md-12">
+                    <input id="departments-dropdownlist" data-bind="value:department" style="width:100%;" />
+                </div>
+            </div>
+            <div class="row" style="margin:5px;">
+                <div class="col-md-12">
+                    <input id="professions-dropdownlist" data-bind="value:profession" style="width:100%;" />
+                </div>
+            </div>
+            <div class="row" style="margin:5px;">
+                <div class="col-md-6">
+                    <input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:is_verified">
+                    <label class="k-checkbox-label" for="eq1">დამოწმებულია</label>
+                </div>
+                <div align="right" class="col-md-6 edit-buttons">
+                    <a class="k-button k-update-button"><span class="k-icon k-update"></span></a>
+                    <a class="k-button k-cancel-button"><span class="k-icon k-cancel"></span></a>
+                </div>
             </div>
         </div>
     </script>
@@ -199,13 +401,13 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-user" id="userIcon"></i>
                                         </div>
-                                        <input type="text" class="form-control" id="login" name="login" placeholder="მომხმარებელი" value="giuza" autofocus required>
+                                        <input type="text" class="form-control" id="login" name="login" placeholder="მომხმარებელი" value="Administrator" autofocus required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-lock" id="lockIcon"></i></div>
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="პაროლი" value="giuzagiuza" required>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="პაროლი" value="123456" required>
                                     </div>
                                 </div>
 
@@ -225,8 +427,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>-->
     <!--<script src="http://fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>-->
     <script src="Scripts/Settings.js"></script>
     <script src="app.js"></script>
@@ -234,8 +436,10 @@
     <script src="Scripts/KendoUnits.js"></script>
     <script src="Scripts/Users/Login.js"></script>
     <script src="Scripts/Users/Users.js"></script>
+    <script src="Scripts/Main/Main.js"></script>
     <script src="Scripts/Courses/Courses.js"></script>
     <script src="Scripts/HeaderList/HeaderList.js"></script>
+    <script src="Scripts/Install/Install.js"></script>
 
 </body>
 
