@@ -68,3 +68,4 @@ var KendoUnits;
     }
     KendoUnits.setDatasourseDefaults = setDatasourseDefaults;
 })(KendoUnits || (KendoUnits = {}));
+//# sourceMappingURL=KendoUnits.js.map

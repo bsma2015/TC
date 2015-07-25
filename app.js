@@ -48,3 +48,4 @@ window.onload = function () {
         Settings.router.navigate("login");
     });
 };
+//# sourceMappingURL=app.js.map

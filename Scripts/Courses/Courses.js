@@ -58,3 +58,4 @@ function coursesListInit() {
         list.add({});
     });
 }
+//# sourceMappingURL=Courses.js.map
